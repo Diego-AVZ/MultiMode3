@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiMode</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <img src="imgs\background.png" id="bg1">
+        
+        <p id="webTitle">Multi<span style="font-weight: bolder;">Mode</span></p>
+        <div id="div12">
+            <p id="welText">Welcome to <span style="font-size: 2.3vw; color: #dffe00; background-color: black; padding: 0.3vw; border-radius: 1vw;"> Multi<b>Mode</b>! </span>
+                 <br><br> A multi-dApp protocol build over the <b>Mode</b> network. <br><br> Please <b> connect wallet</b> to learn more. <br><br>
+                 1. Use dApps <br> 2. Increase your on-chain activity<br> 3. Earn mmPoints <br> 4. Wait for Airdrops.
+                
+            </p>
+            <button id="seeApps">See dApps</button>
+            <div id="signDisc">
+                <p id="discText">Disclaimer: <br><br>
+
+                    By participating in transactions within this project, the user hereby acknowledges and consents to the following terms: <br><br>
+                    
+                    The developers and founders of the project shall not be held liable for any financial losses incurred as a result of interactions with this smart contract. <br><br>
+                    The user acknowledges that the ownership of the wallet entails full responsibility for all actions taken within this decentralized application (dApp). <br><br>
+                    It is imperative for users to conduct thorough due diligence and risk assessment prior to engaging in any transactions within this project.<br><br>
+                    The user agrees to indemnify and hold harmless the developers and founders of the project from any claims, losses, or damages arising from their participation in this venture.<br><br>
+                    This disclaimer constitutes a binding agreement between the user and the project, and supersedes any prior agreements or understandings, whether written or oral.<br><br>
+                    By proceeding with transactions, the user affirms their understanding and acceptance of the terms outlined above.
+                </p><br>
+                <button id="SignDisclaimer" onclick="signDisclaimer()">
+                    Accept
+                </button>
+            </div>
+        </div>
+        <div id="div13">
+            <p style="color: white;">"dApps Here"</p>
+        </div>
+        <div id="div14">
+            <button id="regMail">Earn 150 points</button>
+            <div id="appRegMail">
+                <input type="text" placeholder="Write a valid mail direction" id="regMailIn"> 
+                <button id="regMailBut">Register</button>
+                <p id="errorMail"></p>
+            </div>
+            <div id="bankApp">
+                <p id="at1">dBANK</p> 
+                <p id="ethBal1">Wallet balance</p>
+                <input type="text" id="depoIn" placeholder="ETH amount">
+                <button id="depositBut">Deposit 
+                </button>
+                <button id="withBut">Withdraw All</button>
+                <p id="ethIn">0.000</p>
+                <p id="eth1">ETH</p>
+            </div>
+
+            <div id="lotteryApp">
+                <p id="at3">dLOTTERY</p> 
+                <p id="lotrules"><b>Rules:</b> Write a number from 0 to 100</p>
+                <p id="priceTic">Price: 0.00015 ETH</p>
+                <input type="text" id="myNum" placeholder="your number">
+                <button id="ticBut" onclick="regNum()">Buy Ticket</button>
+                <p id="timeLotT">Finalize in:</p>
+                <p id="lotFinish">00:00</p>
+                <button id="checkWinnerLot" onclick="checkLottery()">Check Winner</button>
+                <p id="msgLot1">20394</p>
+                <p id="titYourTicks">Your Tickets:</p>
+                <div id="yourTick">Your numbers will Appear here</div>
+                <p id="prizeLot">Total Lottery Prize: 0.03 ETH</p>
+                <p id="msgErrorLot1">Lottery closed wait the claim period</p>
+
+            </div>
+
+            <div id="checkInApp">
+                <p id="at4">CheckIn</p> 
+                <button id="checkBut" onclick="checkInFunc()">Check</button>
+                <div id="days21">
+                    <p id="days2"></p>
+                    <p id="d2t">Times Check</p>
+                </div>
+            </div>
+
+            <div id="dash">
+                <p id="at2">DASHBOARD</p> 
+                <div id="wBal"></div>
+                <div id="mmVol">Volume: </div>
+                <div id="divP">
+                    <p id="mmPoints" class="valDash">000</p>
+                    <p class="desText">My Points</p>
+                </div>
+                <div id="divD">
+                    <p id="days" class="valDash">000</p>
+                    <p class="desText">Active Days</p>
+                </div>
+                <p id="configRefer">⚙️</p>
+                <div id="myRefCode">My Referral Code: <p id="codeLink">None</p> </div>
+                <div id="divR">
+                    <p id="refN" class="valDash">000</p>
+                    <p class="desText">Referrals</p>
+                </div>
+                <div id="divL">
+                    <p id="lev" class="valDash">0</p>
+                    <p class="desText">My Level</p>
+                </div>
+                <div id="divM">
+                    <p id="mint" class="valDash">0</p>
+                    <p class="desText">NFT mints</p>
+                </div>
+                <div id="divCD">
+                    <p id="conDep" class="valDash">00</p>
+                    <p class="desText">Deployed Contracts</p>
+                </div>
+                <div id="divX1">
+                    <p id="x1" class="valDash">00</p>
+                    <p class="desText">Last CheckIn</p>
+                </div>
+                <div id="divX2">
+                    <p id="x2" class="valDash">00</p>
+                    <p class="desText">Soon</p>
+                </div>
+                <div id="divX3">
+                    <p id="x3" class="valDash">00</p>
+                    <p class="desText">Soon</p>
+                </div>
+
+                <button id="opti">Optimize</button>
+            
+
+            </div>
+            <div id="guide1">
+
+                <div id="pas1">
+                    <div class="pasNum">1</div>
+                    <p class="pasT">Use dApps</p>
+                    <p class="past">Increase your On-Chain Activity on Mode Network...</p>
+                </div>
+
+                <div id="pas2">
+                    <div class="pasNum">2</div>
+                    <p class="pasT">Earn </p>
+                    <p class="past">The more activity you have, the more points you will earn</p>
+                </div>
+
+                <div id="pas3">
+                    <div class="pasNum">3</div>
+                    <p class="pasT">Use points</p>
+                    <p class="past">Optimize your skills and level up to earn more points easily</p>
+                </div>
+
+                <div id="pas4">
+                    <div class="pasNum">4</div>
+                    <p class="pasT">Refer </p>
+                    <p class="past">Earn more points and rewards</p>
+                </div>
+
+                <div id="pas5">
+                    <div class="pasNum">5</div>
+                    <p class="pasT"> Rewards</p>
+                    <p class="past">We will reward ypur points with a 60% of Our Mode Airdrop and more TBA</p>
+                </div>
+
+                <div id="pas6">
+                    <div class="pasNum">6</div>
+                    <p class="pasT">Enjoy</p>
+                    <p class="past">We will reward ypur points with a 60% of Our Mode Airdrop and more TBA</p>
+                </div>
+                
+            </div>
+
+            <div id="appDash" onclick="showApps()">
+                <p id="aptext">↑ dApps ↑</p>
+            </div>
+            <div id="allDapps">
+            
+                <div id="icon1" class="appIcon">
+                    <img src="imgs\Bank.png" class="iconImg">
+                    <p class="appIT">dBank</p>
+                </div>
+                <div id="icon2" class="appIcon">
+                    <img src="imgs\Lottery.png" class="iconImg">
+                    <p class="appIT">Lottery</p>
+                </div>
+                <div id="icon3" class="appIcon">
+                    <img src="imgs\checkIn.png" class="iconImg">
+                    <p class="appIT">CheckIn</p>
+                </div>
+                <div id="icon4" class="appIcon">
+                    <img src="imgs\mine.png" class="iconImg">
+                    <p class="appIT">Mine</p>
+                </div>
+                <div id="icon5" class="appIcon">
+                    <img src="imgs\clickGame.png" class="iconImg">
+                    <p class="appIT">ClickGame</p>
+                </div>
+                <div id="icon6" class="appIcon">
+                    <img src="imgs\deployer.png" class="iconImg">
+                    <p class="appIT">Deployer</p>
+                </div>
+                <div id="icon7" class="appIcon">
+                    <img src="imgs\minter.png" class="iconImg">
+                    <p class="appIT">Minter</p>
+                </div>
+                <div id="icon8" class="appIcon">
+                    <p class="appIT">Soon</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <button id="go">Launch App</button>
+
+
+    <script src="js1.js"></script>
+    
+</body>
+</html>
