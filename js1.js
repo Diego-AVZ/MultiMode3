@@ -1154,6 +1154,7 @@ async function seeLotteryState() {
 		if(isOpen == true){
 			checkWiBut.innerText = "claim period ended";
 			ticBut.innerText = "Buy Tickets";
+			document.getElementById("msgErrorLot1").style.display = "none";
 		} else{
 			ticBut.innerText = "Lottery Closed";
 			checkWiBut.innerText = "Check Winner";
