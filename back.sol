@@ -47,8 +47,8 @@ contract MultiMode {
 
     // dApps/Services
 
-        function exchangePoints() public onlyMultiMode{
-            level[msg.sender]++;
+        function exchangePoints(address user) public onlyMultiMode{
+            level[user]++;
         }
 
 
@@ -130,10 +130,10 @@ contract MultiMode {
             // OnlyRead Functions
 
             function canCheckIn() public view returns(bool, uint) {
-                if(1 days > block.timestamp - lastCheckIn[msg.sender]) {
+                if(block.timestamp - lastCheckIn[msg.sender] > 1 days) {
                     return(true, 0);
                 } else {
-                    uint time = (block.timestamp - lastCheckIn[msg.sender]); //En minutos
+                    uint time = (block.timestamp - lastCheckIn[msg.sender]); 
                     return(false, time); 
                 }
             }
@@ -210,7 +210,7 @@ contract MultiMode {
                         payable(winners[thisLotteryId][i]).transfer(earnPerWinner);
                 }
                 payable(owner).transfer(eth4Dev);
-                claimClose[thisLotteryId] == true;
+                claimClose[thisLotteryId] = true;
                 amountEthLottery = 0;
             }
 
@@ -378,46 +378,46 @@ contract secondContract{ // levelManager && buy points && registerMail
         locked = false;
     }
 
-    function exchangePoints() public{
+    function exchangePoints(address user) public{
         uint32 myPoints = mainContract.getMyPuntuation(msg.sender);
         uint8 myLevel = mainContract.levelChecker(msg.sender);
 
             if(myLevel == 1){
                 require(myPoints >= 250);
                 mainContract.changePoints(2, 250, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 2){
                 require(myPoints >= 500);
                 mainContract.changePoints(2, 500, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 3){
                 require(myPoints >= 1250);
                 mainContract.changePoints(2, 1250, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 4){
                 require(myPoints >= 2500);
                 mainContract.changePoints(2, 2500, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 5){
                 require(myPoints >= 5000);
                 mainContract.changePoints(2, 5000, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 6){
                 require(myPoints >= 8000);
                 mainContract.changePoints(2, 8000, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 7){
                 require(myPoints >= 12000);
                 mainContract.changePoints(2, 12000, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 8){
                 require(myPoints >= 16000);
                 mainContract.changePoints(2, 16000, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } else if(myLevel == 9){
                 require(myPoints >= 22000);
                 mainContract.changePoints(2, 22000, true, msg.sender);
-                mainContract.exchangePoints();
+                mainContract.exchangePoints(user);
             } 
     }
 
