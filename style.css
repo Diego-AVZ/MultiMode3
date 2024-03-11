@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* Color de fondo de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dffe00; /* Color del "pulgón" de la barra de desplazamiento */
+    border-radius: 5px; /* Radio de borde del "pulgón" de la barra de desplazamiento */
+}
+
 body {
     overflow: hidden;
     font-family: IBM Plex Sans,sans-serif;
@@ -67,6 +80,72 @@ width: 3.2vw;
     margin-top: 2vh;
     margin-left: 83vw;
 } #go:hover {
+    background-color: #000000;
+    color: #dffe00;
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #dffe00;
+}
+
+#bridge {
+    position: absolute;
+    background-color: #dffe00;
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 0.5vw;
+    width: 15vw;
+    height: 5vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: 2vh;
+    margin-left: 3vw;
+    display: none;
+} #bridge:hover {
+    background-color: #000000;
+    color: #dffe00;
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #dffe00;
+}
+
+#RRSS {
+    position: absolute;
+    background-color: #dffe00;
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 0.5vw;
+    width: 15vw;
+    height: 5vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: 2vh;
+    margin-left: 20vw;
+    display: none;
+} #RRSS:hover {
+    background-color: #000000;
+    color: #dffe00;
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #dffe00;
+}
+
+#docs {
+    position: absolute;
+    background-color: #dffe00;
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 0.5vw;
+    width: 15vw;
+    height: 5vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: 2vh;
+    margin-left: 37vw;
+    display: none;
+} #docs:hover {
     background-color: #000000;
     color: #dffe00;
     cursor: pointer;
@@ -269,6 +348,16 @@ width: 3.2vw;
 }
 
 #at4 {
+    position: absolute;
+    text-align: justify;
+    font-size: 1.8vw;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    bottom: -2vh;
+    right: 1vw;
+}
+
+#at5 {
     position: absolute;
     text-align: justify;
     font-size: 1.8vw;
@@ -1112,4 +1201,237 @@ box-shadow: 0vw 0.0vw 0vw rgb(107, 137, 63);
     color: red;
     font-size: 1vw;
 
+}
+
+#windowMode1{
+    position: absolute;
+    width: 58vw;
+    height: 68vh;
+    padding: 1vw;
+    margin: 0vh -2vw;
+    background-color: rgba(27, 167, 167, 0);
+}
+
+#modeApps {
+    position: absolute;
+    display: block;
+    overflow-Y: scroll;
+    overflow-x: hidden;
+    width: 57vw;
+    height: 68vh;
+    padding: 1vw;
+    background-color: rgba(27, 167, 167, 0);
+}
+
+.modeApp1 {
+    position: relative;
+    display: block;
+    width: 56vw;
+    height: 12vw;
+    background-color: #000000;
+    border-color: #dffe00;
+    border-style: solid;
+    border-radius: 1vw;
+    margin-top: 3vh;
+}
+
+.appNum {
+    position: absolute;
+    font-size: 2vw;
+    background-color: #dffe00;
+    color: #000000;
+    padding: 1vw;
+    border-radius: 1vw;
+    border-color: #000000;
+    border-style: solid;
+    margin: -1vh -1vw;
+    font-weight: bolder;
+}
+
+.appImg{
+    position: absolute;
+    margin: 3vh 42vw;
+    width: 10vw;
+}
+
+.goAppEco {
+    position: absolute;
+    background-color: #dffe00;
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 0.5vw;
+    width: 10vw;
+    height: 5vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: 15vh;
+    margin-left: 42.2vw;
+} .goAppEco:hover {
+    background-color: #000000;
+    color: #dffe00;
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #dffe00;
+}
+
+.appTit{
+    
+        position: absolute;
+        text-align: justify;
+        font-size: 1.8vw;
+        font-weight: bolder;
+        margin: 0.5vh 3vw;
+        font-size: 3vw;
+        color: white
+}
+
+.appDes{
+    position: absolute;
+    text-align: justify;
+    font-size: 1.8vw;
+    font-weight: lighter;
+    margin: 9vh 3vw;
+    font-size: 1.2vw;
+    color: white;
+    width: 37vw;
+}
+
+#ecos1{
+    position: absolute;
+    height: 72vh;
+    width: 58vw;
+}
+
+#return1{
+    position: absolute;
+    border-color: #dffe00;
+    font-size: 1.3vw;
+    border-style: solid;
+    background-color: #000000;
+    color: #dffe00;
+    border-radius: 0.5vw;
+    width: 10vw;
+    height: 5vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: -2vh;
+    margin-left: 0.2vw;
+    color: rgb(255, 255, 255);
+    display: none;
+} #return1:hover {
+    background-color: #000000;
+    color: #dffe00;
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #dffe00;
+}
+
+#clickApp {
+    position: absolute;
+    background-color: #dffe00;
+    display: none;
+    border-color: #dffe00;
+    border-style: solid;
+    width: 40vw;
+    height: 35vh;
+    margin-top: 25vh;
+    margin-left: 5vw;
+    border-radius: 0.5vw;
+    box-shadow: inset 0vw 0vw 0.8vw black;
+    transition: ease 1.5s;
+}
+
+
+#clickAddPoints {
+    position: absolute;
+    background-color: #000000;
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    color: #dffe00;
+    border-radius: 0.5vw;
+    width: 10vw;
+    height: 7vh;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin-top: 17vh;
+    margin-left: 25vw;
+    box-shadow: 0.2vw 0.2vw 0vw rgb(107, 137, 63);
+} #clickAddPoints:hover {
+    
+    box-shadow: 0vw 0vw 0vw rgb(107, 137, 63);
+    cursor: pointer;
+    transition: ease, 1s;
+    border-color: #000000;
+}
+
+#clickBut {
+    position: absolute;
+    background: radial-gradient(rgb(0,0,0), rgb(0, 0, 0));
+    font-size: 1.3vw;
+    border-style: solid;
+    border-color: #000000;
+    color: #dffe00;
+    border-radius: 5vw;
+    width: 10vw;
+    height: 10vw;
+    font-weight: 700;
+    letter-spacing: 0.2vw;
+    margin: 7vh 5vw;
+    box-shadow: 0.5vw 1vw 0vw rgb(107, 137, 63);
+
+} #clickBut:active {
+    background: radial-gradient(rgb(0,0,0), rgb(95, 122, 66)); 
+    margin: 8vh 5.5vw;
+    box-shadow: 0vw 0vw 0vw rgb(107, 137, 63);
+    cursor: pointer;
+    transition: ease, 0.3s;
+    border-color: #000000;
+} #clickBut:hover{
+    cursor: pointer;
+}
+
+#jsPointsH{
+    position: absolute;
+    font-size: 2vw;
+    right: 01vw;
+    margin-top: 0vh;
+    transform: translateY(-5vh);
+    transition: ease, 1s;
+    color: white;
+    text-shadow: 0vw 0vw 0.3vw rgb(0,0,0);
+}
+
+#PointsToAdd{
+    position: absolute;
+    font-size: 2vw;
+    margin: 2vh 20vw;
+    color: rgb(0, 0, 0);
+}
+
+#mainBar{
+    position: absolute;
+    width: 40vw;
+    height: 5vh;
+    margin: -10vh 0vw;
+    background-color: #000000;
+    border-style: solid;
+    border-color: #dffe00;
+    border-radius: 1vw;
+    box-shadow: inset 0vw 0vw 0.8vw #dffe00;
+}
+
+#bar{
+    position: absolute;
+    width: 0vw;
+    height: 4.8vh;
+    margin: 0.05vh 0vw;
+    background-color: #e0fe00cf;
+    background: radial-gradient(#e0fe00cf, #dffe00,#e7fe38);
+    border-style: none;
+    border-color: #dffe00;
+    border-radius: 1vw;
+    box-shadow:  0vw 0vw 0.8vw #dffe00;
+    transition: ease, 1s;
 }
