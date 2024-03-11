@@ -1404,6 +1404,7 @@ icon1.addEventListener("click", function(){
 	checkInApp.style.display = "none";
 	guide1.style.display = "none";
 	windowMode1.style.display = "none";
+	clickApp.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	showApps();
 })
@@ -1413,6 +1414,7 @@ icon2.addEventListener("click", function(){
 	lotteryApp.style.display = "block";
 	checkInApp.style.display = "none";
 	guide1.style.display = "none";
+	clickApp.style.display = "none";
 	windowMode1.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	showApps();
@@ -1424,6 +1426,7 @@ icon3.addEventListener("click", function(){
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "block";
 	windowMode1.style.display = "none";
+	clickApp.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	guide1.style.display = "none";
 	showApps();
@@ -1445,8 +1448,8 @@ icon8.addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
-	checkInApp.style.display = "none"; 
 	windowMode1.style.display = "block"; 
+	clickApp.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	guide1.style.display = "none";
 	showApps();
