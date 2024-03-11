@@ -2,71 +2,8 @@ const web3 = new Web3(window.ethereum);
 
 //CONTRACTS:
 
-const mmContractAddr = "0x9A16541fB90d78DD35521Ab9c7e4D40932d04d69";
+const mmContractAddr = "0xD243F533BFDd92BE023AC72f5Ba7B42bF26B7F0A";
 const mmABI = [
-	{
-		"inputs": [],
-		"name": "actualTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
-			}
-		],
-		"name": "airdropChecker",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "amountEthLottery",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "canCheckIn",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
 	{
 		"inputs": [
 			{
@@ -151,12 +88,12 @@ const mmABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "data",
-				"type": "string"
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
 			}
 		],
-		"name": "disclaimer",
+		"name": "exchangePoints",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -165,16 +102,68 @@ const mmABI = [
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "",
+				"name": "a",
 				"type": "address"
 			}
 		],
-		"name": "disclaimers",
+		"name": "givePermission",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint16",
+				"name": "num",
+				"type": "uint16"
+			}
+		],
+		"name": "regMyNum",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawMyEth",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "actualTime",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "uint256",
 				"name": "",
-				"type": "string"
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "airdropChecker",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -182,9 +171,33 @@ const mmABI = [
 	},
 	{
 		"inputs": [],
-		"name": "exchangePoints",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "amountEthLottery",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "canCheckIn",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -367,38 +380,6 @@ const mmABI = [
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "a",
-				"type": "address"
-			}
-		],
-		"name": "givePermission",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "hasSign",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "user",
 				"type": "address"
 			}
@@ -447,19 +428,6 @@ const mmABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint16",
-				"name": "num",
-				"type": "uint16"
-			}
-		],
-		"name": "regMyNum",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "seeIfCanCheckWin",
 		"outputs": [
@@ -486,30 +454,6 @@ const mmABI = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
-			}
-		],
-		"name": "seeIfHasSigned",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -624,36 +568,12 @@ const mmABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawMyEth",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	}
 ];
 const mmContract = new web3.eth.Contract(mmABI, mmContractAddr);
 
-const mmContractAddr2 = "0x8df6d32b5bAe63d95F58B9359645e2d646b01B5B";
+const mmContractAddr2 = "0xb07fc03626287334A3C4b408db364BbDb8894060";
 const mmABI2 = [
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "multimode",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
 	{
 		"inputs": [
 			{
@@ -666,6 +586,44 @@ const mmABI2 = [
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "devWithdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "exchangePoints",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "registerMailTask",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "multimode",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	},
 	{
 		"inputs": [],
@@ -682,20 +640,6 @@ const mmABI2 = [
 	},
 	{
 		"inputs": [],
-		"name": "devWithdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "exchangePoints",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "mainContract",
 		"outputs": [
 			{
@@ -705,13 +649,6 @@ const mmABI2 = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "registerMailTask",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -736,8 +673,59 @@ const mmABI2 = [
 ];
 const mmContract2 = new web3.eth.Contract(mmABI2, mmContractAddr2);
 
-const mmContractAddr3 = "0x428046B2390E3a961d48790dC54eb04177743C5D";
+const mmContractAddr3 = "0xD183798ba65cdBE33DD6fC36b7d7de11517CfEF9";
 const mmABI3 = [
+	{
+		"inputs": [],
+		"name": "createCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"name": "disclaimer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "data",
+				"type": "string"
+			},
+			{
+				"internalType": "bytes8",
+				"name": "code",
+				"type": "bytes8"
+			}
+		],
+		"name": "disclaimerWithCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes8",
+				"name": "code",
+				"type": "bytes8"
+			}
+		],
+		"name": "regWithCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -785,44 +773,6 @@ const mmABI3 = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "createCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "data",
-				"type": "string"
-			}
-		],
-		"name": "disclaimer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "data",
-				"type": "string"
-			},
-			{
-				"internalType": "bytes8",
-				"name": "code",
-				"type": "bytes8"
-			}
-		],
-		"name": "disclaimerWithCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -893,19 +843,6 @@ const mmABI3 = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes8",
-				"name": "code",
-				"type": "bytes8"
-			}
-		],
-		"name": "regWithCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -984,6 +921,9 @@ var connectedAddress;
 const modeNetwork = "0x868b";
 const modeTest = "0x397";
 var goBut = document.getElementById("go");
+var bridge = document.getElementById("bridge");
+var docs = document.getElementById("docs");
+var RRSS = document.getElementById("RRSS");
 
 goBut.addEventListener("click", async()=>{
     try {
@@ -1045,7 +985,9 @@ goBut.addEventListener("click", async()=>{
             seeDepositedBalance()
             getDashData()
 			seeIfHasReisterMail() 
-        
+			bridge.style.display = "block";
+			RRSS.style.display = "block";
+			docs.style.display = "block";
       } catch (error) {
         console.error('Error connecting wallet', error);
       }
@@ -1154,7 +1096,6 @@ async function seeLotteryState() {
 		if(isOpen == true){
 			checkWiBut.innerText = "claim period ended";
 			ticBut.innerText = "Buy Tickets";
-			document.getElementById("msgErrorLot1").style.display = "none";
 		} else{
 			ticBut.innerText = "Lottery Closed";
 			checkWiBut.innerText = "Check Winner";
@@ -1355,8 +1296,10 @@ async function getDashData() {
         document.getElementById("lev").innerText = myLevel; 
         document.getElementById("days").innerText = myActiv;
 		document.getElementById("days2").innerText = myActiv;
-        document.getElementById("x1").innerText = lastCheck[1];
-		console.log(lastCheck[0] + lastCheck[1] + "<-- data")
+
+		var lastCheckLeg = lastCheck[1]/(60*60);
+        document.getElementById("x1").innerText = lastCheckLeg;
+		
         
 
     } catch (error) {
@@ -1443,19 +1386,24 @@ var icon3 = document.getElementById("icon3");
 var icon4 = document.getElementById("icon4");
 var icon5 = document.getElementById("icon5");
 var icon6 = document.getElementById("icon6");
+var icon7 = document.getElementById("icon7");
+var icon8 = document.getElementById("icon8");
 
 var bankApp = document.getElementById("bankApp");
 var lotteryApp = document.getElementById("lotteryApp"); 
 var checkInApp = document.getElementById("checkInApp"); 
+var clickApp = document.getElementById("clickApp"); 
 var guide1 = document.getElementById("guide1");
+var windowMode1 = document.getElementById("windowMode1");
 
-
+//windowMode1
 
 icon1.addEventListener("click", function(){
 	bankApp.style.display = "block";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
 	guide1.style.display = "none";
+	windowMode1.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	showApps();
 })
@@ -1465,6 +1413,7 @@ icon2.addEventListener("click", function(){
 	lotteryApp.style.display = "block";
 	checkInApp.style.display = "none";
 	guide1.style.display = "none";
+	windowMode1.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	showApps();
 	seeLotteryState();
@@ -1474,6 +1423,30 @@ icon3.addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "block";
+	windowMode1.style.display = "none";
+	document.getElementById("appRegMail").style.display = "none";
+	guide1.style.display = "none";
+	showApps();
+})
+
+icon5.addEventListener("click", function(){
+	bankApp.style.display = "none";
+	lotteryApp.style.display = "none";
+	checkInApp.style.display = "none";
+	windowMode1.style.display = "none";
+	clickApp.style.display = "block";
+	document.getElementById("appRegMail").style.display = "none";
+	guide1.style.display = "none";
+	showApps();
+})
+
+
+icon8.addEventListener("click", function(){
+	bankApp.style.display = "none";
+	lotteryApp.style.display = "none";
+	checkInApp.style.display = "none";
+	checkInApp.style.display = "none"; 
+	windowMode1.style.display = "block"; 
 	document.getElementById("appRegMail").style.display = "none";
 	guide1.style.display = "none";
 	showApps();
@@ -1483,6 +1456,7 @@ document.getElementById("regMail").addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
+	windowMode1.style.display = "none";
 	guide1.style.display = "none";
 	document.getElementById("appRegMail").style.display = "block";
 	document.getElementById("regMail").style.display = "none";
@@ -1503,3 +1477,95 @@ function timestampToTime(timestamp) {
     // Retornar la hora en formato hh:mm
     return hours + 'h:' + minutes+"m";
 }
+
+var iframe1 = document.getElementById("iframe1");
+var modeApps = document.getElementById("modeApps");
+var ecos1 = document.getElementById("ecos1");
+
+function changeUrl1(){
+	iframe1.src = "https://app.mode.network/early/";
+	modeApps.style.display = "none";
+	ecos1.style.display = "block";
+	document.getElementById("return1").style.display = "block";
+}
+
+function changeUrl2(){
+	iframe1.src = "https://app.kim.exchange/swap";
+	modeApps.style.display = "none";
+	ecos1.style.display = "block";
+	document.getElementById("return1").style.display = "block";
+}
+
+function changeUrl3(){
+	iframe1.src = "https://swapmode.fi/swap";
+	modeApps.style.display = "none";
+	ecos1.style.display = "block";
+	document.getElementById("return1").style.display = "block";
+}
+
+
+function return1(){
+	iframe1.src = "";
+	modeApps.style.display = "block";
+	ecos1.style.display = "none";
+	document.getElementById("return1").style.display = "none";
+}
+
+var jsPoints = 0;
+var listPoints = [[10,1],[20,1],[30,1],[40,1],[50,5],[60,2],[70,2],[80,2],[90,2],[100,10],[110,3],[120,3],[130,3],[140,3],[150,15],[160,4],[170,4],[180,4],[190,4],[200,20],[225,10],[250,25],[300,30],[350,50],[400,75],[500,100],[600,100],[700,125],[800,150],[900, 150],[1000,200]];
+var boost = false;
+var multiplier1 = 2;
+var solPoints = 0;
+
+var bar = document.getElementById("bar");
+var fullWidth = 37; // 1000 jspoints == 40vw (con el initial => 40-3=37 )
+var eachClick = fullWidth/1000;
+
+function addJsPoints(){
+	if (boost == false){
+		jsPoints++;
+		document.getElementById("jsPointsH").innerText = jsPoints;
+	} else{
+		jsPoints += 1 * multiplier1;
+	}
+
+	for(var i = 0; i < listPoints.length; i++){
+		if(jsPoints == listPoints[i][0]){
+			solPoints += listPoints[i][1];
+			document.getElementById("PointsToAdd").innerHTML = solPoints;
+		}
+	}
+
+	bar.style.width = eachClick*jsPoints + "vw";
+
+	if (jsPoints > 110) {
+		document.getElementById("jsPointsH").style.transform = "translateY(0.1vh)";
+	} else {
+		document.getElementById("jsPointsH").style.transform = " translateY(-5vh)"; 
+	}
+}
+
+/* __ For "m" Click keyboard teclado
+
+var click1 = false;
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "m" && click1 == false){
+		addJsPoints();
+		click1 = true;
+		document.getElementById("clickBut").style.margin = "8vh 5.5vw";
+		document.getElementById("clickBut").style.boxShadow = "0vw 0vw 0vw rgb(107, 137, 63)";
+	}
+})
+
+document.addEventListener("keyup", function(event){
+	if(event.key === "m" && click1 == true){
+		click1 = false;
+		document.getElementById("clickBut").style.margin = "7vh 5vw";
+		document.getElementById("clickBut").style.boxShadow = "0.5vw 1vw 0vw rgb(107, 137, 63)";
+
+	}
+
+})
+
+*/
