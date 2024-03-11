@@ -83,6 +83,14 @@
                 </div>
             </div>
 
+            <div id="clickApp">
+                <p id="at5">ClickGame</p> 
+                <button id="clickAddPoints" onclick="">Add Points</button>
+                <button id="clickBut" onclick="addJsPoints()">Click Me!</button>
+                <p id="PointsToAdd"></p>
+                <div id="mainBar"><div id="bar"><p id="jsPointsH">0</p></div></div>
+            </div>
+
             <div id="dash">
                 <p id="at2">DASHBOARD</p> 
                 <div id="wBal"></div>
@@ -170,6 +178,43 @@
                 
             </div>
 
+            <div id="windowMode1" style="display: none;">
+                <div id="modeApps">
+                    <div class="modeApp1">
+                        <div class="appNum">1</div>
+                        <p class="appTit">Mode Network</p>
+                        <p class="appDes">To participate in the <b>Mode</b> airdrop, you'll need to <b>register</b>, <b>check your score</b> on other <b>L2 blockchains</b>, and make an <b>ETH</b> transfer from <b>Ethereum L1</b> to the <b>Mode Network</b> to secure and store your points.</p>
+                        <img src="imgs\mode_logo.png" class="appImg">
+                        <button class="goAppEco" id="openApp1" onclick="changeUrl1()">Open App</button>
+                    </div>
+                    <div class="modeApp1">
+                        <div class="appNum">2</div>
+                        <p class="appTit">Kim Exchange</p>
+                        <p class="appDes"><b>Kim</b> is a <b>DEX</b> where you must execute swaps and provide liquidity to earn points for the <b>Mode Airdrop</b>.</p>
+                        <img src="imgs\kimLogo.svg" class="appImg">
+                        <button class="goAppEco" id="openApp2" onclick="changeUrl2()">Open App</button>
+                    </div>
+                    <div class="modeApp1">
+                        <div class="appNum">3</div>
+                        <p class="appTit">SwapMode</p>
+                        <p class="appDes"><b>SwapMode</b> is the largest DEX by TVL on <b>Mode Network</b>. Open the app, perform swaps, and provide liquidity to earn points.</p>
+                        <img src="imgs\modeSwapLogo.png" class="appImg" style="width: 6vw; margin-left: 44vw;">
+                        <button class="goAppEco" id="openApp3" onclick="changeUrl3()">Open App</button>
+                    </div>
+                    <div class="modeApp1">
+                        <div class="appNum">4</div>
+                        <p class="appTit">Iconic</p>
+                        <p class="appDes"><b>Get</b> more points easily <b>using</b> Iconic. The leading protocol by TVL in Mode Network. <b>Utilize</b> its lending and borrowing features.</p>
+                        <img src="imgs\iconicLogo.png" class="appImg">
+                        <button class="goAppEco" id="openApp4">Open App</button>
+                    </div>
+                </div>
+                <div id="ecos1" style="display: none;"> <!--Reg In Mode Network-->
+                    <iframe src="https://app.mode.network/early/" width="100%" height="100%" frameborder="0" id="iframe1"></iframe>
+                </div>
+                <button id="return1" onclick="return1()">&larr; Return</button>
+            </div>
+
             <div id="appDash" onclick="showApps()">
                 <p id="aptext">↑ dApps ↑</p>
             </div>
@@ -204,7 +249,8 @@
                     <p class="appIT">Minter</p>
                 </div>
                 <div id="icon8" class="appIcon">
-                    <p class="appIT">Soon</p>
+                    <img src="imgs\mode_logo.png" class="iconImg">
+                    <p class="appIT">Airdrop Guide</p>
                 </div>
             </div>
         </div>
@@ -212,6 +258,9 @@
     </div>
     
     <button id="go">Launch App</button>
+    <button id="bridge">Bridge to Mode</button>
+    <button id="docs">Documentation</button>
+    <button id="RRSS">Social</button>
 
 
     <script src="js1.js"></script>
