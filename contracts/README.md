@@ -1,0 +1,5 @@
+- **Contract MuliMode.sol** -> Main MultiMode Contract
+- **Contract mmDAO.sol** -> This contract manages proposals and user votes for the governance of MultiMode.
+- **Contract mmTreasury.sol** -> This is the public contract for the MultiMode Treasury, where all collected fees can be withdrawn by multisigning a function.
+- **Contract mmSecond.sol** -> Used to manage user levels on MultiMode, the buy points function, and the mail registration.
+- **Contract mmThird.sol** -> Manages disclaimer signing and our referral system.
