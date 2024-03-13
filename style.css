@@ -1435,3 +1435,131 @@ box-shadow: 0vw 0.0vw 0vw rgb(107, 137, 63);
     box-shadow:  0vw 0vw 0.8vw #dffe00;
     transition: ease, 1s;
 }
+
+#game-container {
+    width: 35vw;
+    height: 70vh;
+    position: absolute;
+    display: none;
+    border: 1px solid #dffe00;
+    margin: 0vh 10vw;
+    overflow: hidden;
+  }
+  
+  #player, #enemy {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  }
+  
+  #player {
+    background-color: rgba(0, 0, 255, 0);
+    border-radius: 1vw;
+    width: 4vw;
+    height: auto;
+    border-style: solid;
+    border-color: #dffe00;
+  } #player:hover{
+    cursor:none;
+  }
+
+  
+
+  #enemy {
+    background-color: red;
+    border-radius: 1vw;
+    height: 5vh;
+  }
+
+  .bullet {
+    width: 4px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    margin-left: 0.5vw;
+      }
+  
+  .bullet1 {
+    width: 4px;
+    height: 10px;
+    background-color: #dffe00;
+    position: absolute;
+    margin-left: 1vw;
+  }
+
+  #livesIcon{
+    position: absolute;
+    color: #dffe00;
+    font-size: 2vw;
+    margin: 1vh 1vw;
+  }  
+
+  #lives {
+    position: absolute;
+    color: #dffe00;
+    margin: 1.5vh 3.5vw;
+    font-size: 2vw;
+    text-align: left;
+
+  }
+
+  #enemyIcon{
+    position: absolute;
+    color: #dffe00;
+    font-size: 2vw;
+    margin: 1vh 8.5vw;
+  }  
+  
+  #enemyDead {
+    position: absolute;
+    color: #dffe00;
+    margin: 1.5vh 11vw;
+    font-size: 2vw;
+    text-align: left;
+  }
+
+  #bulletIcon{
+    position: absolute;
+    color: #dffe00;
+    font-size: 2vw;
+    margin: 1vh 16vw;
+  }  
+  
+  #bulletCount {
+    position: absolute;
+    color: #dffe00;
+    margin: 1.5vh 18.5vw;
+    font-size: 2vw;
+    text-align: left;
+
+  }
+
+  #gameOver {
+    position: absolute;
+    font-size: 3vw;
+    color: #dffe00;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.1vw;
+  }
+
+  #restartButton
+    {
+        position: absolute;
+        background-color: #dffe00;
+        font-size: 1vw;
+        border-style: solid;
+        border-color: #dffe00;
+        color: #000000;
+        border-radius: 0.5vw;
+        width: 7vw;
+        height: 6vh;
+        font-weight: 700;
+        letter-spacing: 0.2vw;
+        margin-top: 1vh;
+        margin-left: 24vw;
+        box-shadow: 0.2vw 0.2vw 0vw rgb(107, 137, 63);
+    }
+  
