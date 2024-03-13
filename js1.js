@@ -1395,13 +1395,14 @@ var checkInApp = document.getElementById("checkInApp");
 var clickApp = document.getElementById("clickApp"); 
 var guide1 = document.getElementById("guide1");
 var windowMode1 = document.getElementById("windowMode1");
-
-//windowMode1
+var rocketApp = document.getElementById("game-container");
 
 icon1.addEventListener("click", function(){
 	bankApp.style.display = "block";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
+	game1Opened = false;
+	rocketApp.style.display = "none";
 	guide1.style.display = "none";
 	windowMode1.style.display = "none";
 	clickApp.style.display = "none";
@@ -1413,6 +1414,8 @@ icon2.addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "block";
 	checkInApp.style.display = "none";
+	game1Opened = false;
+	rocketApp.style.display = "none";
 	guide1.style.display = "none";
 	clickApp.style.display = "none";
 	windowMode1.style.display = "none";
@@ -1426,6 +1429,23 @@ icon3.addEventListener("click", function(){
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "block";
 	windowMode1.style.display = "none";
+	game1Opened = false;
+	rocketApp.style.display = "none";
+	clickApp.style.display = "none";
+	document.getElementById("appRegMail").style.display = "none";
+	guide1.style.display = "none";
+	showApps();
+})
+
+var game1Opened;
+
+icon4.addEventListener("click", function(){
+	bankApp.style.display = "none";
+	lotteryApp.style.display = "none";
+	checkInApp.style.display = "none";
+	rocketApp.style.display = "block";
+	game1Opened = true;
+	windowMode1.style.display = "none";
 	clickApp.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	guide1.style.display = "none";
@@ -1436,6 +1456,8 @@ icon5.addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
+	game1Opened = false;
+	rocketApp.style.display = "none";
 	windowMode1.style.display = "none";
 	clickApp.style.display = "block";
 	document.getElementById("appRegMail").style.display = "none";
@@ -1449,6 +1471,8 @@ icon8.addEventListener("click", function(){
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
 	windowMode1.style.display = "block"; 
+	game1Opened = false;
+	rocketApp.style.display = "none";
 	clickApp.style.display = "none";
 	document.getElementById("appRegMail").style.display = "none";
 	guide1.style.display = "none";
@@ -1459,6 +1483,8 @@ document.getElementById("regMail").addEventListener("click", function(){
 	bankApp.style.display = "none";
 	lotteryApp.style.display = "none";
 	checkInApp.style.display = "none";
+	game1Opened = false;
+	rocketApp.style.display = "none";
 	windowMode1.style.display = "none";
 	guide1.style.display = "none";
 	document.getElementById("appRegMail").style.display = "block";
@@ -1506,6 +1532,13 @@ function changeUrl3(){
 	document.getElementById("return1").style.display = "block";
 }
 
+function changeUrl4(){
+	iframe1.src = "https://www.ionic.money/";
+	modeApps.style.display = "none";
+	ecos1.style.display = "block";
+	document.getElementById("return1").style.display = "block";
+}
+
 
 function return1(){
 	iframe1.src = "";
@@ -1521,7 +1554,7 @@ var multiplier1 = 2;
 var solPoints = 0;
 
 var bar = document.getElementById("bar");
-var fullWidth = 37; // 1000 jspoints == 40vw (con el initial => 40-3=37 )
+var fullWidth = 40; // 1000 jspoints == 40vw (con el initial => 40-3=37 )
 var eachClick = fullWidth/1000;
 
 function addJsPoints(){
@@ -1572,3 +1605,207 @@ document.addEventListener("keyup", function(event){
 })
 
 */
+
+
+// ROCKET GAME
+
+
+/////////////////
+const player = document.getElementById('player');
+const enemy = document.getElementById('enemy');
+const gameContainer = document.getElementById('game-container');
+const lives = document.getElementById('lives');
+
+let playerX = 10;
+let playerY = 0;
+
+player.style.left = playerX + 'vw'; 
+player.style.top = playerY + 'vh'; 
+
+let enemyX = 15;
+let enemyY = 10;
+
+enemy.style.left = enemyX + 'vw'; 
+enemy.style.top = enemyY + 'vh'; 
+
+var playerLives = 3;
+let isGameOver = false;
+
+function moveEnemy() {
+  enemyY += 0.15; 
+  enemy.style.top = enemyY + 'vh'; 
+
+  if (enemyY > 60) { 
+    enemyY = 2; 
+    enemyX = Math.random()*20; 
+    enemy.style.left = enemyX + 'vw'; 
+  }
+
+  if (!isGameOver) {
+    requestAnimationFrame(moveEnemy);
+  }
+}
+
+moveEnemy();
+
+function createEnemyBullet() {
+  const bullet = document.createElement('div');
+  bullet.classList.add('bullet');
+  bullet.style.left = enemyX + 'vw'; 
+  bullet.style.top = (enemyY + 2) + 'vh'; 
+  gameContainer.appendChild(bullet);
+
+  const moveBulletInterval = setInterval(() => {
+    bullet.style.top = (parseInt(bullet.style.top) + 1.1) + 'vh'; 
+
+    if (parseInt(bullet.style.top) > 80) { 
+      clearInterval(moveBulletInterval);
+      gameContainer.removeChild(bullet);
+    }
+
+    if (!isGameOver && checkCollision(bullet, player)) {
+		killedToLive = 0;
+      clearInterval(moveBulletInterval);
+      gameContainer.removeChild(bullet);
+      playerHit();
+    }
+  }, 25);
+}
+
+var playerBullets = 10;
+var killed = 0;
+var killedToLive = 0;
+
+function createPlayerBullet() {
+  if (playerBullets > 0) {
+    const bullet = document.createElement('div');
+    bullet.classList.add('bullet1');
+    bullet.style.left = playerX + 'vw'; 
+    bullet.style.top = playerY + 'vh'; 
+    gameContainer.appendChild(bullet);
+    playerBullets--;
+    document.getElementById("bulletCount").innerText = playerBullets;
+    const moveBulletInterval = setInterval(() => {
+      bullet.style.top = (parseInt(bullet.style.top) - 1) + 'vh'; 
+
+      if (parseInt(bullet.style.top) < 0) {
+        clearInterval(moveBulletInterval);
+        gameContainer.removeChild(bullet);
+      }
+
+      if (!isGameOver && checkCollision(bullet, enemy)) {
+        killed++;
+		killedToLive++;
+        playerBullets += 2;
+        document.getElementById("bulletCount").innerText = playerBullets;
+        document.getElementById("enemyDead").innerText = killed;
+        clearInterval(moveBulletInterval);
+        gameContainer.removeChild(bullet);
+        enemyHit();
+		if(killedToLive > 10){
+			killedToLive = 0;
+			playerLives++;
+			lives.innerText = playerLives;
+		}
+      }
+    }, 20);
+  }
+}
+
+function enemyHit() {
+  enemyY = 2; // 
+  enemyX = Math.random() * 25; 
+  enemy.style.left = enemyX + 'vw'; 
+  enemy.style.top = enemyY + 'vh'; 
+}
+
+setInterval(() => {
+  if (!isGameOver && game1Opened) {
+    createEnemyBullet();
+  }
+}, 1200);
+
+function playerHit() {
+  playerLives--;
+  lives.innerText = playerLives;
+  if (playerLives <= 0) {
+    gameOver();
+  } else {
+    console.log('¡Te han alcanzado! Vidas restantes: ' + playerLives);
+  }
+}
+
+function gameOver() {
+  isGameOver = true;
+  document.getElementById("gameOver").innerText = "Game Over";
+  
+}
+
+function checkCollision(element1, element2) {
+  const rect1 = element1.getBoundingClientRect();
+  const rect2 = element2.getBoundingClientRect();
+
+  return !(rect1.right < rect2.left ||
+    rect1.left > rect2.right ||
+    rect1.bottom < rect2.top ||
+    rect1.top > rect2.bottom);
+}
+
+
+gameContainer.addEventListener('mousemove', (event) => {
+	if(!isGameOver){
+	playerX = (event.clientX - 220) / window.innerWidth * 100; 
+	playerY = (event.clientY - 100) / window.innerHeight * 100; 
+
+	if (playerX < 0) {
+		playerX = 0;
+	} else if (playerX > 100) {
+		playerX = 100;
+	}
+
+	if (playerY < 0) {
+		playerY = 0;
+	} else if (playerY > 100) {
+		playerY = 100;
+	}
+
+	player.style.left = playerX + 'vw'; 
+	player.style.top = playerY + 'vh'; 
+}
+});
+
+
+let isSKeyPressed = false; 
+
+document.addEventListener('keydown', (event) => {
+  if (!isGameOver && (event.key === "s" || event.key === "S") && !isSKeyPressed) {
+    createPlayerBullet();
+    isSKeyPressed = true; 
+  }
+});
+
+document.addEventListener('keyup', (event) => {
+  if (event.key === "s" || event.key === "S") {
+    isSKeyPressed = false;
+  }
+});
+
+var restartButton = document.getElementById("restartButton");
+
+restartButton.addEventListener('click', () => {
+   
+    playerLives = 3;
+    playerBullets = 10;
+    killed = 0;
+    isGameOver = false;
+    document.getElementById("gameOver").innerText = ""; 
+    document.getElementById("lives").innerText = playerLives; 
+    document.getElementById("bulletCount").innerText = playerBullets; 
+    document.getElementById("enemyDead").innerText = killed; 
+    player.style.left = playerX + 'vw';
+    player.style.top = playerY + 'vh';
+    enemy.style.left = enemyX + 'vw';
+    enemy.style.top = enemyY + 'vh';
+    
+    moveEnemy(); 
+});
