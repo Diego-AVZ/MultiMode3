@@ -8,10 +8,13 @@
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 </head>
 <body>
+    
     <div id="div1">
+       
         <img src="imgs\background.png" id="bg1">
         
         <p id="webTitle">Multi<span style="font-weight: bolder;">Mode</span></p>
+        
         <div id="div12">
             <p id="welText">Welcome to <span style="font-size: 2.3vw; color: #dffe00; background-color: black; padding: 0.3vw; border-radius: 1vw;"> Multi<b>Mode</b>! </span>
                  <br><br> A multi-dApp protocol build over the <b>Mode</b> network. <br><br> Please <b> connect wallet</b> to learn more. <br><br>
@@ -35,6 +38,7 @@
                     Accept
                 </button>
             </div>
+            
         </div>
         <div id="div13">
             <p style="color: white;">"dApps Here"</p>
@@ -55,6 +59,19 @@
                 <button id="withBut">Withdraw All</button>
                 <p id="ethIn">0.000</p>
                 <p id="eth1">ETH</p>
+            </div>
+
+            <div id="game-container">
+                <img id="player" src="imgs\rocket.png">
+                <div id="enemy"></div>
+                <p id="livesIcon">&#10084;</p>
+                <p id="lives">3</p>                
+                <p id="enemyIcon">&#9760;</p>
+                <p id="enemyDead">0</p> 
+                <p id="bulletIcon">&#128165;</p>
+                <p id="bulletCount">10</p>
+                <p id="gameOver"></p>
+                <button id="restartButton">Restart</button>
             </div>
 
             <div id="lotteryApp">
@@ -90,6 +107,8 @@
                 <p id="PointsToAdd"></p>
                 <div id="mainBar"><div id="bar"><p id="jsPointsH">0</p></div></div>
             </div>
+
+           
 
             <div id="dash">
                 <p id="at2">DASHBOARD</p> 
@@ -167,13 +186,13 @@
                 <div id="pas5">
                     <div class="pasNum">5</div>
                     <p class="pasT"> Rewards</p>
-                    <p class="past">We will reward ypur points with a 50% of Our Mode Airdrop and more TBA</p>
+                    <p class="past">We will reward ypur points with a 60% of Our Mode Airdrop and more TBA</p>
                 </div>
 
                 <div id="pas6">
                     <div class="pasNum">6</div>
                     <p class="pasT">Enjoy</p>
-                    <p class="past">Have fun and wait mor games and dApps!</p>
+                    <p class="past">We will reward ypur points with a 60% of Our Mode Airdrop and more TBA</p>
                 </div>
                 
             </div>
@@ -206,7 +225,7 @@
                         <p class="appTit">Iconic</p>
                         <p class="appDes"><b>Get</b> more points easily <b>using</b> Iconic. The leading protocol by TVL in Mode Network. <b>Utilize</b> its lending and borrowing features.</p>
                         <img src="imgs\iconicLogo.png" class="appImg">
-                        <button class="goAppEco" id="openApp4">Open App</button>
+                        <button class="goAppEco" id="openApp4" onclick="changeUrl4()">Open App</button>
                     </div>
                 </div>
                 <div id="ecos1" style="display: none;"> <!--Reg In Mode Network-->
@@ -233,8 +252,8 @@
                     <p class="appIT">CheckIn</p>
                 </div>
                 <div id="icon4" class="appIcon">
-                    <img src="imgs\mine.png" class="iconImg">
-                    <p class="appIT">Mine</p>
+                    <img src="imgs\rocket.png" class="iconImg">
+                    <p class="appIT">Rocket</p>
                 </div>
                 <div id="icon5" class="appIcon">
                     <img src="imgs\clickGame.png" class="iconImg">
