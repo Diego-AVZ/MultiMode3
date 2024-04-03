@@ -1,0 +1,124 @@
+
+.inputs {
+    display: block;
+    margin-bottom: 2vh;
+    padding: 1vw;
+    font-size: 2vh;
+    border: 0.2vw solid #ccc;
+    border-radius: 1vh;
+    width: 40vw;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-80%);
+    position: relative;
+}
+
+.buts {
+    display: inline-block;
+    padding: 2vh 4vw;
+    font-size: 2vh;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+#b1 {
+    position: absolute;
+    height: 25vh;
+    margin: -27vh 60vw;
+} #b1:hover{cursor: pointer; background-color: #035ab7;} #b1:active{background-color: #023871;}
+
+#p1{
+    position: absolute;
+    background-color: #e3e2e2;
+    width: 20vw;
+    max-height: 7vh;
+    border-radius: 1vw;
+    padding: 2vw;
+    overflow-y: scroll;
+    margin: 10vh 10vw;
+}
+
+#p2{
+    position: absolute;
+    background-color: #e3e2e2;
+    width: 28vw;
+    height: 1vh;
+    border-radius: 1vw;
+    padding: 1vw;
+    margin: 18vh 35vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#p3{
+    position: absolute;
+    background-color: #e3e2e2;
+    width: 8vw;
+    height: 1vh;
+    border-radius: 1vw;
+    padding: 1vw;
+    margin: 10vh 38vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#p4{
+    position: absolute;
+    background-color: #e3e2e2;
+    width: 8vw;
+    height: 1vh;
+    border-radius: 1vw;
+    padding: 1vw;
+    margin: 10vh 50vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#p5{
+    position: absolute;
+    background-color: #e3e2e2;
+    width: 8vw;
+    height: 1vh;
+    border-radius: 1vw;
+    padding: 1vw;
+    margin: 25vh 50vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#b2{
+    position: absolute;
+    margin: 25vh 10vw;
+
+}
+
+
+#b3{
+    position: absolute;
+    margin: 25vh 20vw;
+    background-color: rgb(216, 4, 4);
+}
+
+#balance {
+    position: absolute;
+    width: 10vw;
+    text-align: right;
+}
+
+#lastVoteText {
+    position: absolute;
+    margin: 23vh 10vw;
+    color: #035ab7;
+    display: none;
+}
