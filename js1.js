@@ -1628,7 +1628,7 @@ let enemyY = 10;
 enemy.style.left = enemyX + 'vw'; 
 enemy.style.top = enemyY + 'vh'; 
 
-var playerLives = 3;
+var playerLives = 10;
 let isGameOver = false;
 
 function moveEnemy() {
@@ -1672,7 +1672,7 @@ function createEnemyBullet() {
   }, 25);
 }
 
-var playerBullets = 10;
+var playerBullets = 50;
 var killed = 0;
 var killedToLive = 0;
 
